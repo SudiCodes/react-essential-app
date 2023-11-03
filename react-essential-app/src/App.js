@@ -37,6 +37,15 @@ function CoreConcept(props) {
   );
 }
 
+export function CourseGoal(props) {
+  return (
+    <li>
+      <h2> {props.title} </h2>
+      <p> {props.description} </p>
+    </li>
+  );
+}
+
 function App() {
   return (
     <div>
@@ -45,7 +54,10 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
+            <CoreConcept {...CORE_CONCEPTS[0]} />
             <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
         </section>
       </main>
