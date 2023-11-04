@@ -1,50 +1,9 @@
-import rcc from "./assets/react-core-concepts.png";
-// import component from "./assets/components.png";
-// import config from "./assets/config.png";
-// import jsxui from "./assets/jsx-ui.png";
-// import statemgmt from "./assets/state-mgmt.png";
+import Header from "./components/Header/Header";
+import CoreConcept from "./components/CoreConcepts";
+import TabButton from "./components/TabButton";
 import { CORE_CONCEPTS } from "./data";
+
 import "./App.css";
-
-const words = ["Fundamental", "Crucial", "Core"];
-function randomPicker(l) {
-  const i = Math.floor(Math.random() * l.length);
-  // console.log(l.length);
-  return l[i];
-}
-
-function Header() {
-  const pickedWord = randomPicker(words);
-  return (
-    <header>
-      <img src={rcc} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {pickedWord} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
-
-function CoreConcept(props) {
-  return (
-    <li>
-      <img src={props.image} alt={props.alt} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-}
-
-export function CourseGoal(props) {
-  return (
-    <li>
-      <h2> {props.title} </h2>
-      <p> {props.description} </p>
-    </li>
-  );
-}
 
 function App() {
   return (
@@ -59,6 +18,15 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[2]} />
             <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton> Components </TabButton>
+            <TabButton> JSX </TabButton>
+            <TabButton> Props </TabButton>
+            <TabButton> State </TabButton>
+          </menu>
         </section>
       </main>
     </div>
